@@ -33,3 +33,24 @@ const signup = ()=>{
     // ..
   });
 }
+
+
+// Sign in function 
+
+const signIn = ()=>{
+
+    const email = document.getElementById("email").value;
+    const Password = document.getElementById("Password").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, Password)
+  .then((result) => {
+    // Signed in 
+    document.write("You are Sign In");
+    console.log(result);
+    // ...
+  })
+  .catch((error) => {
+    vconsole.log(error.code);
+    console.log(error.message);
+  });
+}
